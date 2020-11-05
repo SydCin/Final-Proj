@@ -38,11 +38,11 @@ suicide%>%
   filter(!is.na(Rank))%>%
   arrange(Rank)
 ```
-##Discover what year has the highest suicide rate? What year has the lowest?
-##Is suicide increasing over the years? Decreasing? In what countries?
-##What age is more likely to committ suicide? Is this constant throughout the years?
-##What sex is most likely to committ suicide? Is this constant throughout the years
-##How are country and age associated with suicide rates?
+##Discover what year has the highest suicide rate? What year has the lowest? ##Put a graph with this
+##Is suicide increasing over the years? Decreasing? In what countries? #Put a graph with this
+##What age is more likely to committ suicide? Is this constant throughout the years? #Put a graph with this
+##What sex is most likely to committ suicide? Is this constant throughout the years #Put a graph with this
+##How are country and age associated with suicide rates? 
 #How are country and sex associated with suicide rates
 ##What generation has the highest suicide rate?
 
