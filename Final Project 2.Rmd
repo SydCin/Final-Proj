@@ -1,0 +1,59 @@
+---
+title: "Suicide Rates Final Project"
+author: "Sydney Cindrich and Mancy Tomar"
+date: "10/22/2020"
+output:
+  word_document: default
+  html_document: default
+---
+```{r}
+setwd("C:/Users/cindrich/Documents/Fall 2020/Classes/STAT 579")
+suicide<-read.csv("master.csv")
+```
+
+##Getting familiar with the data
+```{r}
+str(suicide) #the data is either an integer or character
+dim(suicide) #There are 43776 observation and 6 variables
+sum(is.na(suicide)) #There are 7716 missing values in the data set
+summary(suicide) #The missing values are from suicide_no (2256) and population (5460)
+```
+##Discover what country has the highest suicide rate
+```{r}
+library(dplyr)
+suicide%>%
+  mutate( 
+   Rank= rank(-suicides_no)
+  )%>%
+  arrange(Rank)
+```
+##Russian Federation has the highest suicide rate
+
+##Discover what country has the lowest suicide rate
+```{r}
+suicide%>%
+  mutate( 
+    Rank= rank(suicides_no)
+  )%>%
+  filter(!is.na(Rank))%>%
+  arrange(Rank)
+```
+##Discover what year has the highest suicide rate? What year has the lowest?
+##Is suicide increasing over the years? Decreasing? In what countries?
+##What age is more likely to committ suicide? Is this constant throughout the years?
+##What sex is most likely to committ suicide? Is this constant throughout the years
+##How are country and age associated with suicide rates?
+#How are country and sex associated with suicide rates
+##What generation has the highest suicide rate?
+
+#Introducing a new data set to see what state in the U.S. has the highest suicide rate
+```{r}
+setwd("C:/Users/cindrich/Documents/Fall 2020/Classes/STAT 579")
+suicide.2<-read.csv("Suicide Mortality by State (1).csv")
+summary(suicide.2)
+head(suicide.2)
+unique(suicide.2$YEAR)
+```
+##What state has the highest suicide rate in the U.S.? The lowest?
+##What year has the highest suicide rate in the U.S.? The lowest?
+
